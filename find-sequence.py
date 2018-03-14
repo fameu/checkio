@@ -4,7 +4,7 @@
 # @File    : find-sequence.py
 # @Software: PyCharm
 
-def checkio(matrix):
+def checkioMe(matrix):
     #replace this for solution
     n = len(matrix)
     for i in range(n):
@@ -22,6 +22,13 @@ def checkio(matrix):
             if len(set(l4)) == 1 and len(l4) == 4:
                 return True
     return False
+
+def checkioOne(m):
+    horizont=lambda m: any(False if j+4>len(m) else all(m[i][j+k]==m[i][j] for k in range(4))\
+                                for i in range(len(m)) for j in range(len(m)))
+    diagonal=lambda m: any(False if i+4>len(m) or j+4>len(m) else all(m[i+k][j+k]==m[i][j] for k in range(4))\
+                                for i in range(len(m)) for j in range(len(m)))
+    return horizont(m) or horizont(list(zip(*m))) or diagonal(m) or diagonal(m[-1::-1])
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
