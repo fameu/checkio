@@ -4,7 +4,7 @@
 # @File    : roman-numerals.py
 # @Software: PyCharm
 
-def checkioMe(data):
+def checkio(data):
 	cnt = [1000, 500, 100, 50, 10, 5, 1]
 	chr = ["M", "D", "C", "L", "X", "V", "I"]
 	s = ""
